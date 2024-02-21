@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show with Alert</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background 1s ease-in-out;
+        }
+        #alertButton {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            color: #fff;
+        }
+
+        @keyframes fade {
+            0%, 100% {
+                opacity: 0;
+            }
+            20%, 80% {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #slideContainer {
+                margin: 3cm;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            #slideContainer {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            #slideContainer {
+                width: 90%;
+                margin: 1cm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slideContainer" class="slide"></div>
+
+    <a href="last page.html">
+        <button id="alertButton" class="accept" onclick="showPopup()">Show Alert</button>
+    </a>
+    <script>
+        function showPopup() {
+            alert("Get the location of the patient");
+            window.location.href = "last page.html";
+            hidePopup();
+        }
+    </script>
+</body>
+
+</html>
